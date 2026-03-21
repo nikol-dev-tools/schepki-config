@@ -1,6 +1,6 @@
 {
   "_comment": "Schepki Extensions — Remote Config. Edit this file to update all extensions instantly.",
-  "_last_updated": "2026-03-21",
+  "_last_updated": "2026-03-21T22:00Z",
   "global": {
     "privacy_policy_url": "https://nikol-dev-tools.github.io/schepki-config/privacy",
     "support_email": "nikol.dev.tools@gmail.com",
@@ -9,7 +9,7 @@
   },
   "monetization": {
     "donation_links": {
-      "buymeacoffee": "https://buymeacoffee.com/REPLACE_WITH_YOUR_LINK",
+      "buymeacoffee": "https://buymeacoffee.com/nikoltools",
       "crypto_btc": "REPLACE_WITH_BTC_ADDRESS",
       "crypto_eth": "REPLACE_WITH_ETH_ADDRESS",
       "patreon": "https://patreon.com/REPLACE_WITH_YOUR_LINK"
