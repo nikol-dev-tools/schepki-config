@@ -1,0 +1,91 @@
+{
+  "_comment": "Schepki Extensions — Remote Config. Edit this file to update all extensions instantly.",
+  "_last_updated": "2026-03-21",
+
+  "global": {
+    "privacy_policy_url": "https://nikol-dev-tools.github.io/schepki-config/privacy",
+    "support_email": "nikol.dev.tools@gmail.com",
+    "developer_name": "Schepki Dev",
+    "website_url": "https://github.com/nikol-dev-tools"
+  },
+
+  "monetization": {
+    "donation_links": {
+      "buymeacoffee": "https://buymeacoffee.com/REPLACE_WITH_YOUR_LINK",
+      "crypto_btc": "REPLACE_WITH_BTC_ADDRESS",
+      "crypto_eth": "REPLACE_WITH_ETH_ADDRESS",
+      "patreon": "https://patreon.com/REPLACE_WITH_YOUR_LINK"
+    },
+    "affiliate_links": {
+      "amazon_us": "https://amazon.com/?tag=REPLACE_WITH_TAG",
+      "amazon_de": "https://amazon.de/?tag=REPLACE_WITH_TAG",
+      "aliexpress": "https://aliexpress.com/?aff_id=REPLACE_WITH_ID"
+    }
+  },
+
+  "cross_promo": {
+    "show_banner": false,
+    "banner_text": "Try our new extension!",
+    "banner_url": "https://chrome.google.com/webstore/detail/REPLACE_WITH_ID",
+    "banner_icon": ""
+  },
+
+  "extensions": {
+
+    "pomodoro_timer": {
+      "is_active": true,
+      "version_name": "Focus Timer - Pomodoro",
+      "store_url": "https://chrome.google.com/webstore/detail/REPLACE_WITH_POMODORO_ID",
+      "donation": {
+        "show": true,
+        "source": "buymeacoffee",
+        "text_en": "Support the developer ☕",
+        "text_ru": "Поддержать разработчика ☕"
+      },
+      "geo_overrides": {
+        "IN": { "donation_source": "crypto_btc" },
+        "BR": { "donation_source": "crypto_btc" }
+      }
+    },
+
+    "coin_flip": {
+      "is_active": true,
+      "version_name": "Coin Flip - Quick Decision",
+      "store_url": "https://chrome.google.com/webstore/detail/REPLACE_WITH_COINFLIP_ID",
+      "donation": {
+        "show": true,
+        "source": "buymeacoffee",
+        "text_en": "Support the developer ☕",
+        "text_ru": "Поддержать разработчика ☕"
+      },
+      "geo_overrides": {}
+    },
+
+    "breathing_timer": {
+      "is_active": false,
+      "version_name": "Breathing Timer - Calm Focus",
+      "store_url": "",
+      "donation": {
+        "show": true,
+        "source": "buymeacoffee",
+        "text_en": "Support the developer ☕",
+        "text_ru": "Поддержать разработчика ☕"
+      },
+      "geo_overrides": {}
+    },
+
+    "tab_limiter": {
+      "is_active": false,
+      "version_name": "Tab Limiter - Stay Focused",
+      "store_url": "",
+      "donation": {
+        "show": true,
+        "source": "buymeacoffee",
+        "text_en": "Support the developer ☕",
+        "text_ru": "Поддержать разработчика ☕"
+      },
+      "geo_overrides": {}
+    }
+
+  }
+}
