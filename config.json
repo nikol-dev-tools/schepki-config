@@ -1,6 +1,6 @@
 {
   "_comment": "Schepki Extensions — Remote Config. Edit this file to update all extensions instantly.",
-  "_last_updated": "2026-03-22T08:00Z",
+  "_last_updated": "2026-03-22T10:00Z",
   "global": {
     "privacy_policy_url": "https://nikol-dev-tools.github.io/schepki-config/privacy",
     "support_email": "nikol.dev.tools@gmail.com",
@@ -66,9 +66,9 @@
       }
     },
     "tab_limiter": {
-      "is_active": false,
-      "version_name": "Tab Limiter - Stay Focused",
-      "store_url": "",
+      "is_active": true,
+      "version_name": "Tab Limiter — Stay Focused",
+      "store_url": "REPLACE_WITH_TAB_LIMITER_ID_AFTER_PUBLISH",
       "donation": {
         "show": true,
         "source": "buymeacoffee",
