@@ -45,7 +45,7 @@ git remote set-url origin "https://nikol-dev-tools:ТОКЕН@github.com/nikol-d
 | **GitHub аккаунт** | `nikol-dev-tools` |
 | **GitHub PAT (запись)** | Хранится у пользователя в файле `SCHEPKI_TOKEN.doc` — попроси прислать в начале диалога |
 | **Google Analytics 4** | Measurement ID: `G-3ZKRBK0TBV` |
-| **GA4 API Secret** | В `analytics.js` стоит заглушка `schepki_secret_v1` — заменить на реальный из GA4 Dashboard |
+| **GA4 API Secret** | ⚠️ ЗАГЛУШКА — аналитика не работает! В breathing-timer: `schepki_v1`, в tab-limiter: `schepki_secret_v1`. Нужно заменить на реальный — см. раздел 9 |
 | **Buy Me a Coffee** | [buymeacoffee.com/nikoltools](https://buymeacoffee.com/nikoltools) — Stripe подключён на Mykola Kolesnykov, Кипр |
 | **Chrome Developer Dashboard** | Зарегистрирован на основной email, взнос $5 оплачен |
 
@@ -58,6 +58,7 @@ git remote set-url origin "https://nikol-dev-tools:ТОКЕН@github.com/nikol-d
 | **GitHub Config Repo** | [github.com/nikol-dev-tools/schepki-config](https://github.com/nikol-dev-tools/schepki-config) |
 | **GitHub Boilerplate Repo** | [github.com/nikol-dev-tools/schepki-boilerplate](https://github.com/nikol-dev-tools/schepki-boilerplate) |
 | **GitHub Tab Limiter Repo** | [github.com/nikol-dev-tools/tab-limiter](https://github.com/nikol-dev-tools/tab-limiter) |
+| **GitHub Breathing Timer Repo** | [github.com/nikol-dev-tools/breathing-timer](https://github.com/nikol-dev-tools/breathing-timer) (ветка: master) |
 | **Remote Config URL** | `https://raw.githubusercontent.com/nikol-dev-tools/schepki-config/main/config.json` |
 | **Privacy Policy** | [nikol-dev-tools.github.io/schepki-config/privacy.html](https://nikol-dev-tools.github.io/schepki-config/privacy.html) |
 | **Гайд по публикации** | `PUBLISHING_GUIDE.md` в этом репо — пошаговая инструкция для Chrome Web Store |
@@ -182,6 +183,26 @@ git remote set-url origin "https://nikol-dev-tools:ТОКЕН@github.com/nikol-d
 5. **Стиль общения:** Пользователь — CEO без технического опыта. Объясняй всё просто, пошагово.
 6. **При публикации** всегда готовь промо-материалы: иконки 128×128, скриншоты 1280×800, промо-баннер 440×280 + SEO-описание для US рынка на английском. Все данные для заполнения стора — в `PUBLISHING_GUIDE.md`.
 7. **В конце каждого диалога** — обновлять этот файл `CONTEXT.md` и пушить на GitHub.
+
+---
+
+## 9. Как получить реальный GA4 API Secret (один раз для всех расширений)
+
+Аналитика сейчас не работает — во всех расширениях стоят заглушки. Чтобы включить сбор данных:
+
+1. Открой [analytics.google.com](https://analytics.google.com)
+2. Выбери свой аккаунт → **Admin** (шестерёнка внизу слева)
+3. В разделе **Property** → **Data Streams**
+4. Кликни на свой поток (Extension)
+5. Прокрути вниз → **Measurement Protocol API secrets** → **Create**
+6. Дай любое название (например `schepki_prod`) → скопируй полученный секрет
+7. Отправь секрет Manus — он обновит `analytics.js` во всех расширениях сразу
+
+**Где смотреть аналитику:**
+- [analytics.google.com](https://analytics.google.com) → свой аккаунт
+- Раздел **Reports** → **Realtime** — видеть активных пользователей за последние 30 мин
+- Раздел **Reports** → **Engagement** → **Events** — все события (popup_open, first_open, donate_click, tab_blocked)
+- Раздел **Reports** → **Acquisition** — откуда приходят пользователи
 
 ---
 
