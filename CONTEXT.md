@@ -57,8 +57,9 @@ git remote set-url origin "https://nikol-dev-tools:ТОКЕН@github.com/nikol-d
 |---|---|
 | **GitHub Config Repo** | [github.com/nikol-dev-tools/schepki-config](https://github.com/nikol-dev-tools/schepki-config) |
 | **GitHub Boilerplate Repo** | [github.com/nikol-dev-tools/schepki-boilerplate](https://github.com/nikol-dev-tools/schepki-boilerplate) — **v2.0** (GA4, i18n, Rate Us, UTM, donate delay) |
-| **GitHub Tab Limiter Repo** | [github.com/nikol-dev-tools/tab-limiter](https://github.com/nikol-dev-tools/tab-limiter) |
-| **GitHub Breathing Timer Repo** | [github.com/nikol-dev-tools/breathing-timer](https://github.com/nikol-dev-tools/breathing-timer) (ветка: master) |
+| **GitHub Tab Limiter Repo** | [github.com/nikol-dev-tools/tab-limiter](https://github.com/nikol-dev-tools/tab-limiter) (ветка: main) |
+| **GitHub Breathing Timer Repo** | [github.com/nikol-dev-tools/breathing-timer](https://github.com/nikol-dev-tools/breathing-timer) (ветка: main) |
+| **GitHub Breathing Timer Assets** | [github.com/nikol-dev-tools/breathing-timer-assets](https://github.com/nikol-dev-tools/breathing-timer-assets) — промо-баннеры и скриншоты для стора |
 | **Remote Config URL** | `https://raw.githubusercontent.com/nikol-dev-tools/schepki-config/main/config.json` |
 | **Privacy Policy** | [nikol-dev-tools.github.io/schepki-config/privacy.html](https://nikol-dev-tools.github.io/schepki-config/privacy.html) |
 | **Гайд по публикации** | `PUBLISHING_GUIDE.md` в этом репо — пошаговая инструкция для Chrome Web Store |
@@ -81,16 +82,15 @@ git remote set-url origin "https://nikol-dev-tools:ТОКЕН@github.com/nikol-d
 
 | # | Расширение | Статус | Store ID |
 |---|---|---|---|
-| 1 | **Pomodoro Timer** | 🟡 In Review | Ожидается |
-| 2 | **Breathing Timer — Calm & Focus** | 🟢 Live | `oplkicaedpgnccocfflaakmkefgeepbd` |
-| 3 | **Tab Limiter — Stay Focused** | 🟡 In Review | `clpenohkhonpjaclhcedbldknallghmn` |
-| 4 | **Quick Notes** | ⚪ Planned | — |
+| 1 | **Breathing Timer — Calm & Focus** | 🟢 Live | `oplkicaedpgnccocfflaakmkefgeepbd` |
+| 2 | **Tab Limiter — Stay Focused** | 🟡 In Review | `clpenohkhonpjaclhcedbldknallghmn` |
+| 3 | **Subscription Reminder** | ⚪ Planned | — |
 
 > **Coin Flip** — тестовая версия, нигде не публиковалась, в работе не используется. Упоминать не нужно.
+>
+> **Pomodoro Timer** — убран из активного портфеля. Код был упрощённым (одна кнопка), не соответствует стандарту v2.0. Перенесён в раздел «Будущие щепки» для переработки с нуля на бойлерплейте v2.0.
 
-### Таблица фич по продуктам (что делает каждая фича и как управлять)
-
-| Фича | Pomodoro Timer | Breathing Timer | Tab Limiter | Quick Notes |
+### Таблица фич по продуктам
 
 **Расшифровка фич:**
 - **Remote Config** — расширение при запуске тянет `config.json` с GitHub (кэш 6ч). Позволяет менять ссылку на донат, включать/выключать баннер, менять порог Rate Us — **без обновления расширения в сторе**. Меняется в `schepki-config/config.json`.
@@ -105,38 +105,36 @@ git remote set-url origin "https://nikol-dev-tools:ТОКЕН@github.com/nikol-d
 - **Уведомления (push)** — всплывающие системные уведомления через `chrome.notifications`. Требует разрешение `notifications` в manifest. Планируется в следующих расширениях.
 - **Напоминания (alarms)** — `chrome.alarms` для фоновых задач. В Tab Limiter — для аналитики. В будущем — для напоминаний типа «пора сделать перерыв».
 
-| Фича | Pomodoro Timer | Breathing Timer | Tab Limiter | Quick Notes |
-|---|---|---|---|---|
-| **Manifest V3** | ✅ | ✅ | ✅ | ⚪ |
-| **Remote Config (GitHub)** | ✅ | ✅ | ✅ | ⚪ |
-| **GA4 аналитика** | ✅ | ✅ | ✅ | ⚪ |
-| **Событие «первый запуск»** | ❌ | ❌ | ✅ | ⚪ |
-| **Use count (счётчик запусков)** | ❌ | ❌ | ✅ | ⚪ |
-| **UTM-параметры в доната-ссылке** | ❌ | ❌ | ✅ | ⚪ |
-| **Донат-баннер (Buy Me a Coffee)** | ✅ | ✅ | ✅ | ⚪ |
-| **Задержка баннера (3 запуска)** | ❌ | ❌ | ✅ | ⚪ |
-| **Rate Us (запрос оценки)** | ❌ | ❌ | ✅ (после 10 исп.) | ⚪ |
-| **Уведомления (push)** | ❌ | ❌ | ❌ | ⚪ |
-| **Напоминания (alarms)** | ❌ | ❌ | ✅* | ⚪ |
-| **i18n (мультиязычность)** | ❌ | ❌ | ✅ EN/DE/FR/ES/PT | ⚪ |
-| **GEO-оверрайды (IN, BR)** | ✅ | ✅ | ✅ | ⚪ |
-| **Live badge на иконке** | ❌ | ❌ | ✅ (счётчик вкладок) | ⚪ |
-| **Toggle вкл/выкл** | ❌ | ❌ | ✅ | ⚪ |
-| **Privacy Policy ссылка** | ✅ | ✅ | ✅ | ⚪ |
-| **Промо 1280x800** | ✅ | ✅ | ✅ | ⚪ |
-| **Промо 440x280** | ✅ | ✅ | ✅ | ⚪ |
-| **Иконки 16/32/48/128px** | ✅ | ✅ | ✅ | ⚪ |
+| Фича | Breathing Timer | Tab Limiter | Subscription Reminder |
+|---|---|---|---|
+| **Manifest V3** | ✅ | ✅ | ⚪ |
+| **Remote Config (GitHub)** | ✅ | ✅ | ⚪ |
+| **GA4 аналитика** | ✅ | ✅ | ⚪ |
+| **Событие «первый запуск»** | ❌ | ✅ | ⚪ |
+| **Use count (счётчик запусков)** | ❌ | ✅ | ⚪ |
+| **UTM-параметры в доната-ссылке** | ❌ | ✅ | ⚪ |
+| **Донат-баннер (Buy Me a Coffee)** | ✅ | ✅ | ⚪ |
+| **Задержка баннера (3 запуска)** | ❌ | ✅ | ⚪ |
+| **Rate Us (запрос оценки)** | ❌ | ✅ (после 10 исп.) | ⚪ |
+| **Уведомления (push)** | ❌ | ❌ | ⚪ |
+| **Напоминания (alarms)** | ❌ | ✅* | ⚪ |
+| **i18n (мультиязычность)** | ❌ | ✅ EN/DE/FR/ES/PT | ⚪ |
+| **GEO-оверрайды (IN, BR)** | ✅ | ✅ | ⚪ |
+| **Live badge на иконке** | ❌ | ✅ (счётчик вкладок) | ⚪ |
+| **Toggle вкл/выкл** | ❌ | ✅ | ⚪ |
+| **Privacy Policy ссылка** | ✅ | ✅ | ⚪ |
+| **Промо 1280x800** | ✅ | ✅ | ⚪ |
+| **Промо 440x280** | ✅ | ✅ | ⚪ |
+| **Иконки 16/32/48/128px** | ✅ | ✅ | ⚪ |
 
 > *В Tab Limiter alarms используется для аналитики, не для пользовательских напоминаний.
-
-> **Приоритет при следующем обновлении Pomodoro и Breathing Timer:** добавить первый запуск, UTM, use count, задержку баннера, Rate Us, i18n — сделать одним обновлением сразу для обоих.
 
 ---
 
 ## 5. Boilerplate — как использовать для новых расширений
 
 1. Клонировать: `gh repo clone nikol-dev-tools/schepki-boilerplate new-extension-name`
-2. В `popup.js` заменить `REPLACE_WITH_EXTENSION_ID` на ключ (например, `quick_notes`).
+2. В `popup.js` заменить `REPLACE_WITH_EXTENSION_ID` на ключ (например, `subscription_reminder`).
 3. Добавить новый ключ в `config.json` в репо `schepki-config`.
 4. Написать логику в секции `STEP 3: YOUR EXTENSION LOGIC HERE` в `popup.js`.
 5. **НЕ трогать** `remote-config.js` и `analytics.js` — они работают идеально.
@@ -150,39 +148,46 @@ git remote set-url origin "https://nikol-dev-tools:ТОКЕН@github.com/nikol-d
 - ✅ Версия расширения в каждом GA4-событии
 - ✅ Use count для поведенческой аналитики
 
+### Стандарт иконок Schepki (v3):
+- Фон: тёмный `#0a0e1a`
+- Стиль: неоновый, минималистичный (cyan/teal акценты)
+- Размеры: 16×16, 48×48, 128×128 (32×32 — опционально)
+- Промо-материалы хранятся в отдельном репозитории `{extension-name}-assets`
+
 ---
 
 ## 6. Текущие приоритеты
 
-### ⚠️ TODO — отложенные задачи (MUST DO при следующем обновлении)
+### ⚠️ TODO — отложенные задачи
 
-1. **Breathing Timer + Tab Limiter** — обновить ZIP одним пакетом:
-   - Добавить `extension_id` и `extension_version` в каждый вызов `trackEvent()` в `popup.js` (GA4 не видит данные без этого)
-   - Перенести все фичи Tab Limiter v2 в Breathing Timer (и Pomodoro): UTM, Rate Us, first_open, use count, i18n, задержка баннера
-   - Добавить новые иконки v3 в ZIP Breathing Timer
+1. **Tab Limiter** — дождаться одобрения, затем вписать реальный `store_url` в `config.json`.
+
+2. **Breathing Timer** — когда будет весомая причина (например, новая иконка или фича), выпустить обновление одним пакетом:
+   - Добавить `extension_id` и `extension_version` в каждый вызов `trackEvent()` в `popup.js`
+   - Перенести фичи Tab Limiter v2: UTM, Rate Us, first_open, use count, i18n, задержка баннера
+   - Новые иконки v3 уже готовы в `breathing-timer-assets`
    - **Делать одним пакетом** — не гонять на проверку несколько раз
 
-2. **Tab Limiter** — дождаться одобрения, затем сразу обновить ZIP (см. п. 1)
+3. **Pomodoro Timer** — переработать с нуля на бойлерплейте v2.0 (см. раздел «Будущие щепки»). Старый код не использовать.
 
-3. **Pomodoro Timer** — дождаться одобрения, вписать store_url в config.json
-
-### Приоритет 1 — Tab Limiter загружен, ждём одобрения ✅
-- Tab Limiter отправлен на модерацию 22 мар 2026.
-- Store ID: `clpenohkhonpjaclhcedbldknallghmn`.
-- `config.json` уже обновлён с реальным store_url.
-
-### Приоритет 2 — Когда одобрят Pomodoro и Tab Limiter
-- Вписать их реальные `store_url` в `config.json`.
-- Сделать одно обновление для Breathing Timer и Pomodoro: UTM + Rate Us + первый запуск + i18n.
-
-### Приоритет 3 — Следующая щепка
-- Кандидат: **Subscription Reminder** (напоминание об отмене триала).
-- Рынок: США / Канада. Аудитория: все кто пользуется SaaS-сервисами.
+### Приоритет 1 — Следующая щепка: Subscription Reminder
+- **Концепция:** Напоминание об отмене триала SaaS-сервисов.
+- **Рынок:** США / Канада. Аудитория: все кто пользуется SaaS-сервисами.
+- **Архитектура:** Бойлерплейт v2.0, иконки v3 (тёмный фон, неоновый стиль).
+- **Статус:** ⚪ Planned — начинаем в следующем диалоге.
 
 ### Стратегия:
 - Сначала строим пачку из 5+ расширений, потом полируем все разом.
 - Обновления живых расширений не трогаем пока нет весомой причины — риск повторной модерации.
 - Предупреждение «Будьте осторожны» при установке — это норма для новых расширений, проходит само после ~100 установок и нескольких недель активности.
+
+### 📋 Будущие щепки (TODO-лист)
+
+| # | Идея | Рынок | Заметки |
+|---|---|---|---|
+| 1 | **Subscription Reminder** | США/Канада | Следующий в разработке |
+| 2 | **Pomodoro Timer v2** | Глобально | Переработать с нуля на v2.0, старый код не использовать |
+| 3 | **Quick Notes** | Глобально | Быстрые заметки прямо в браузере |
 
 ---
 
@@ -193,22 +198,15 @@ git remote set-url origin "https://nikol-dev-tools:ТОКЕН@github.com/nikol-d
 3. **Обновляй статусы:** Если пользователь говорит, что расширение одобрили — обнови таблицу фич (🟡 → 🟢) и вставь `store_url` в `config.json`.
 4. **Обновляй таблицу фич** при каждом создании нового расширения или обновлении существующего.
 5. **Стиль общения:** Пользователь — CEO без технического опыта. Объясняй всё просто, пошагово.
-6. **При публикации** всегда готовь промо-материалы: иконки 128×128, скриншоты 1280×800, промо-баннер 440×280 + SEO-описание для US рынка на английском. Все данные для заполнения стора — в `PUBLISHING_GUIDE.md`.
+6. **При публикации** всегда готовь промо-материалы: иконки 128×128, скриншоты 1280×800, промо-баннер 440×280 + SEO-описание для US рынка на английском. Все данные для заполнения стора — в `PUBLISHING_GUIDE.md`. Промо-материалы хранить в отдельном репозитории `{extension-name}-assets`.
 7. **В конце каждого диалога** — обновлять этот файл `CONTEXT.md` и пушить на GitHub.
+8. **Pomodoro Timer** — не упоминать как активный продукт. Если нужен — делать заново на v2.0.
 
 ---
 
-## 9. Как получить реальный GA4 API Secret (один раз для всех расширений)
+## 8. Как получить реальный GA4 API Secret (справочно — уже настроено)
 
-Аналитика сейчас не работает — во всех расширениях стоят заглушки. Чтобы включить сбор данных:
-
-1. Открой [analytics.google.com](https://analytics.google.com)
-2. Выбери свой аккаунт → **Admin** (шестерёнка внизу слева)
-3. В разделе **Property** → **Data Streams**
-4. Кликни на свой поток (Extension)
-5. Прокрути вниз → **Measurement Protocol API secrets** → **Create**
-6. Дай любое название (например `schepki_prod`) → скопируй полученный секрет
-7. Отправь секрет Manus — он обновит `analytics.js` во всех расширениях сразу
+GA4 API Secret уже получен и вписан во все расширения: `TaFzQ3cgRP25jG3BSYtASA` (псевдоним: schepki_prod).
 
 **Где смотреть аналитику:**
 - [analytics.google.com](https://analytics.google.com) → свой аккаунт
@@ -218,7 +216,14 @@ git remote set-url origin "https://nikol-dev-tools:ТОКЕН@github.com/nikol-d
 
 ---
 
-## 8. История изменений
+## 9. История изменений
+
+### 22 марта 2026 (ночь)
+- **Реструктуризация репозиториев:**
+  - `breathing-timer`: ветка переименована `master` → `main`. Тяжёлые ассеты (промо, скриншоты, icon_source.png) перенесены в отдельный репозиторий `breathing-timer-assets`.
+  - **Pomodoro Timer** убран из активного портфеля. Перенесён в TODO-лист будущих щепок для переработки с нуля на v2.0.
+  - `config.json` обновлён: блок `pomodoro_timer` удалён.
+  - `CONTEXT.md` и `DASHBOARD.md` обновлены: убраны все упоминания Pomodoro как активного продукта, добавлены ссылки на `breathing-timer-assets`.
 
 ### 22 марта 2026 (день)
 - **Иконки v3** для Breathing Timer: тёмный фон `#0a0e1a`, неоновый лотос (cyan/teal) — единый стиль с баннерами. Загружены на GitHub.
@@ -227,7 +232,7 @@ git remote set-url origin "https://nikol-dev-tools:ТОКЕН@github.com/nikol-d
 - **PUBLISHING_GUIDE.md** обновлён: стандарт иконок Schepki (цвета, стиль, промпт-шаблон), раздел про обновление ZIP vs Store listing.
 - **Breathing Timer** отправлен на повторную модерацию с новой иконкой (Store listing).
 
-### 22 марта 2026 (ночь)
+### 22 марта 2026 (ночь — ранее)
 - **GA4 API Secret** получен и вписан во все расширения: `TaFzQ3cgRP25jG3BSYtASA` (псевдоним: schepki_prod). Аналитика активна во всех расширениях.
 - **Boilerplate v2.0** создан и загружен на GitHub: [schepki-boilerplate](https://github.com/nikol-dev-tools/schepki-boilerplate). Фичи: GA4 с реальным секретом, i18n (EN/DE/FR/ES/PT), Rate Us, UTM, задержка баннера, Remote Config.
 
@@ -237,14 +242,12 @@ git remote set-url origin "https://nikol-dev-tools:ТОКЕН@github.com/nikol-d
 - **Tab Limiter — Stay Focused** полностью разработан, готов к загрузке.
   - Архитектура v2.0: GA4 (первый запуск, use count, tab blocked), Remote Config (UTM, GEO), Rate Us (после 10 использований), i18n (EN/DE/FR/ES/PT), toggle вкл/выкл, live badge на иконке.
   - ZIP: `tab-limiter-v1.0.0.zip` (35KB, 13 файлов).
-  - Промо: `promo_1280x800.png`, `promo_440x280.png`, иконки 16/32/48/128px.
   - Store ID: `clpenohkhonpjaclhcedbldknallghmn`. `config.json` обновлён.
   - Код загружен на GitHub: [nikol-dev-tools/tab-limiter](https://github.com/nikol-dev-tools/tab-limiter).
 
 ### 22 марта 2026 (утро)
 - **Breathing Timer — Calm & Focus** одобрен Chrome Web Store 🎉 → статус 🟢 Live.
 - Store ID: `oplkicaedpgnccocfflaakmkefgeepbd`. `config.json` обновлён с реальным store_url.
-- Обсуждены архитектурные улучшения для следующих расширений.
 - Принята стратегия: сначала набрать 5+ расширений, потом полировать все разом.
 
 ### 21 марта 2026
