@@ -50,28 +50,42 @@
 
 ---
 
-## Шаг 4. Вкладка «Конфиденциальность» (Privacy)
+## Шаг 4. Дополнительные поля (Additional Fields)
+
+- **Официальный URL:** Нет
+- **URL главной страницы:** `https://nikol-dev-tools.github.io/schepki-config/privacy.html`
+- **URL службы поддержки:** `https://nikol-dev-tools.github.io/schepki-config/privacy.html`
+- **Только для взрослых:** Выключено ❌
+
+---
+
+## Шаг 5. Вкладка «Конфиденциальность» (Privacy)
 
 ### Единое назначение (Single Purpose)
 Опиши одной фразой что делает расширение. Готовый текст — в разделе конкретного расширения ниже.
 
-### Разрешения (Permissions Justification)
+### Обоснование разрешений (Permissions Justification)
 Для каждого разрешения в manifest.json нужно написать обоснование. Готовые тексты — в разделе конкретного расширения ниже.
 
+### Удалённый код (Remote Code)
+- Выбери **«Да, я использую разрешение "удалённый код"»**
+- **Обоснование:** `The extension fetches a remote JSON configuration file from raw.githubusercontent.com to allow dynamic updates of settings (such as donation link URL) without requiring a Chrome Web Store update. No code is executed remotely — only a static JSON data file is loaded.`
+
 ### Использование данных (Data Usage)
-- **Сбор персональных данных:** НЕТ — отмечай «Нет» везде.
+- **Сбор персональных данных:** НЕТ — оставляй все чекбоксы пустыми.
+- **Подтверждаю следующее:** Отметь **все три** чекбокса внизу ✅✅✅
 - **Политика конфиденциальности:** `https://nikol-dev-tools.github.io/schepki-config/privacy.html`
 
 ---
 
-## Шаг 5. Вкладка «Распространение» (Distribution)
+## Шаг 6. Вкладка «Распространение» (Distribution)
 
 - **Регионы:** Все регионы (All regions)
 - **Видимость:** Общедоступно (Public)
 
 ---
 
-## Шаг 6. Публикация
+## Шаг 7. Публикация
 
 1. Нажми **Сохранить как черновик** (Save draft) — убедись что ошибок нет.
 2. Нажми **Отправить на проверку** (Submit for review).

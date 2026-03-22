@@ -57,6 +57,7 @@ git remote set-url origin "https://nikol-dev-tools:ТОКЕН@github.com/nikol-d
 |---|---|
 | **GitHub Config Repo** | [github.com/nikol-dev-tools/schepki-config](https://github.com/nikol-dev-tools/schepki-config) |
 | **GitHub Boilerplate Repo** | [github.com/nikol-dev-tools/schepki-boilerplate](https://github.com/nikol-dev-tools/schepki-boilerplate) |
+| **GitHub Tab Limiter Repo** | [github.com/nikol-dev-tools/tab-limiter](https://github.com/nikol-dev-tools/tab-limiter) |
 | **Remote Config URL** | `https://raw.githubusercontent.com/nikol-dev-tools/schepki-config/main/config.json` |
 | **Privacy Policy** | [nikol-dev-tools.github.io/schepki-config/privacy.html](https://nikol-dev-tools.github.io/schepki-config/privacy.html) |
 | **Гайд по публикации** | `PUBLISHING_GUIDE.md` в этом репо — пошаговая инструкция для Chrome Web Store |
@@ -81,12 +82,27 @@ git remote set-url origin "https://nikol-dev-tools:ТОКЕН@github.com/nikol-d
 |---|---|---|---|
 | 1 | **Pomodoro Timer** | 🟡 In Review | Ожидается |
 | 2 | **Breathing Timer — Calm & Focus** | 🟢 Live | `oplkicaedpgnccocfflaakmkefgeepbd` |
-| 3 | **Tab Limiter — Stay Focused** | 🔵 Ready to Upload | После публикации |
+| 3 | **Tab Limiter — Stay Focused** | 🟡 In Review | `clpenohkhonpjaclhcedbldknallghmn` |
 | 4 | **Quick Notes** | ⚪ Planned | — |
 
 > **Coin Flip** — тестовая версия, нигде не публиковалась, в работе не используется. Упоминать не нужно.
 
-### Таблица фич по продуктам
+### Таблица фич по продуктам (что делает каждая фича и как управлять)
+
+| Фича | Pomodoro Timer | Breathing Timer | Tab Limiter | Quick Notes |
+
+**Расшифровка фич:**
+- **Remote Config** — расширение при запуске тянет `config.json` с GitHub (кэш 6ч). Позволяет менять ссылку на донат, включать/выключать баннер, менять порог Rate Us — **без обновления расширения в сторе**. Меняется в `schepki-config/config.json`.
+- **Событие «первый запуск»** — при первой установке отправляет событие `first_open` в GA4. Позволяет видеть реальное число новых пользователей (не просто открытий попапа).
+- **Use count** — считает сколько раз пользователь открыл попап. Используется для Rate Us и задержки баннера.
+- **UTM-параметры** — к ссылке buymeacoffee добавляется `?utm_source=tab_limiter&utm_medium=extension`. Позволяет видеть в аналитике откуда именно пришёл донатер.
+- **Задержка баннера** — донат-баннер не показывается первые 3 открытия попапа. Снижает раздражение новых пользователей, повышает retention.
+- **Rate Us** — после N открытий попапа показывает мягкое предложение оставить отзыв в сторе. Порог задаётся в `config.json` → `rate_us_after_opens` (сейчас: 10). Ссылка — `store_url` в config.json.
+- **i18n** — автоматически определяет язык браузера (`navigator.language`) и показывает текст на нужном языке. Добавить язык = добавить объект в `popup.js` → `translations`.
+- **Live badge** — на иконке расширения в тулбаре всегда видно текущее число открытых вкладок. Обновляется в реальном времени.
+- **Toggle вкл/выкл** — кнопка временно отключает лимит без удаления расширения. Состояние сохраняется в `chrome.storage.local`.
+- **Уведомления (push)** — всплывающие системные уведомления через `chrome.notifications`. Требует разрешение `notifications` в manifest. Планируется в следующих расширениях.
+- **Напоминания (alarms)** — `chrome.alarms` для фоновых задач. В Tab Limiter — для аналитики. В будущем — для напоминаний типа «пора сделать перерыв».
 
 | Фича | Pomodoro Timer | Breathing Timer | Tab Limiter | Quick Notes |
 |---|---|---|---|---|
@@ -99,6 +115,8 @@ git remote set-url origin "https://nikol-dev-tools:ТОКЕН@github.com/nikol-d
 | **Донат-баннер (Buy Me a Coffee)** | ✅ | ✅ | ✅ | ⚪ |
 | **Задержка баннера (3 запуска)** | ❌ | ❌ | ✅ | ⚪ |
 | **Rate Us (запрос оценки)** | ❌ | ❌ | ✅ (после 10 исп.) | ⚪ |
+| **Уведомления (push)** | ❌ | ❌ | ❌ | ⚪ |
+| **Напоминания (alarms)** | ❌ | ❌ | ✅* | ⚪ |
 | **i18n (мультиязычность)** | ❌ | ❌ | ✅ EN/DE/FR/ES/PT | ⚪ |
 | **GEO-оверрайды (IN, BR)** | ✅ | ✅ | ✅ | ⚪ |
 | **Live badge на иконке** | ❌ | ❌ | ✅ (счётчик вкладок) | ⚪ |
@@ -107,6 +125,8 @@ git remote set-url origin "https://nikol-dev-tools:ТОКЕН@github.com/nikol-d
 | **Промо 1280x800** | ✅ | ✅ | ✅ | ⚪ |
 | **Промо 440x280** | ✅ | ✅ | ✅ | ⚪ |
 | **Иконки 16/32/48/128px** | ✅ | ✅ | ✅ | ⚪ |
+
+> *В Tab Limiter alarms используется для аналитики, не для пользовательских напоминаний.
 
 > **Приоритет при следующем обновлении Pomodoro и Breathing Timer:** добавить первый запуск, UTM, use count, задержку баннера, Rate Us, i18n — сделать одним обновлением сразу для обоих.
 
@@ -133,10 +153,10 @@ git remote set-url origin "https://nikol-dev-tools:ТОКЕН@github.com/nikol-d
 
 ## 6. Текущие приоритеты
 
-### Приоритет 1 — Загрузить Tab Limiter в Chrome Web Store
-- ZIP-архив `tab-limiter-v1.0.0.zip` готов к загрузке.
-- Гайд по заполнению всех полей: `PUBLISHING_GUIDE.md` в этом репо.
-- После публикации: заменить `REPLACE_WITH_TAB_LIMITER_ID_AFTER_PUBLISH` в `config.json`.
+### Приоритет 1 — Tab Limiter загружен, ждём одобрения ✅
+- Tab Limiter отправлен на модерацию 22 мар 2026.
+- Store ID: `clpenohkhonpjaclhcedbldknallghmn`.
+- `config.json` уже обновлён с реальным store_url.
 
 ### Приоритет 2 — Когда одобрят Pomodoro и Tab Limiter
 - Вписать их реальные `store_url` в `config.json`.
@@ -174,7 +194,8 @@ git remote set-url origin "https://nikol-dev-tools:ТОКЕН@github.com/nikol-d
   - Архитектура v2.0: GA4 (первый запуск, use count, tab blocked), Remote Config (UTM, GEO), Rate Us (после 10 использований), i18n (EN/DE/FR/ES/PT), toggle вкл/выкл, live badge на иконке.
   - ZIP: `tab-limiter-v1.0.0.zip` (35KB, 13 файлов).
   - Промо: `promo_1280x800.png`, `promo_440x280.png`, иконки 16/32/48/128px.
-  - После публикации: заменить `REPLACE_WITH_TAB_LIMITER_ID_AFTER_PUBLISH` в `config.json`.
+  - Store ID: `clpenohkhonpjaclhcedbldknallghmn`. `config.json` обновлён.
+  - Код загружен на GitHub: [nikol-dev-tools/tab-limiter](https://github.com/nikol-dev-tools/tab-limiter).
 
 ### 22 марта 2026 (утро)
 - **Breathing Timer — Calm & Focus** одобрен Chrome Web Store 🎉 → статус 🟢 Live.
