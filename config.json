@@ -1,6 +1,6 @@
 {
   "_comment": "Schepki Extensions — Remote Config. Edit this file to update all extensions instantly.",
-  "_last_updated": "2026-03-21T22:00Z",
+  "_last_updated": "2026-03-22T08:00Z",
   "global": {
     "privacy_policy_url": "https://nikol-dev-tools.github.io/schepki-config/privacy",
     "support_email": "nikol.dev.tools@gmail.com",
@@ -29,7 +29,7 @@
   "extensions": {
     "pomodoro_timer": {
       "is_active": true,
-      "version_name": "Focus Timer - Pomodoro",
+      "version_name": "Pomodoro Timer",
       "store_url": "https://chrome.google.com/webstore/detail/REPLACE_WITH_POMODORO_ID",
       "donation": {
         "show": true,
@@ -46,29 +46,24 @@
         }
       }
     },
-    "coin_flip": {
-      "is_active": true,
-      "version_name": "Coin Flip - Quick Decision",
-      "store_url": "https://chrome.google.com/webstore/detail/REPLACE_WITH_COINFLIP_ID",
-      "donation": {
-        "show": true,
-        "source": "buymeacoffee",
-        "text_en": "Support the developer ☕",
-        "text_ru": "Поддержать разработчика ☕"
-      },
-      "geo_overrides": {}
-    },
     "breathing_timer": {
       "is_active": true,
-      "version_name": "Breathing Timer - Calm Focus",
-      "store_url": "",
+      "version_name": "Breathing Timer — Calm & Focus",
+      "store_url": "https://chrome.google.com/webstore/detail/oplkicaedpgnccocfflaakmkefgeepbd",
       "donation": {
         "show": true,
         "source": "buymeacoffee",
         "text_en": "Support the developer ☕",
         "text_ru": "Поддержать разработчика ☕"
       },
-      "geo_overrides": {}
+      "geo_overrides": {
+        "IN": {
+          "donation_source": "crypto_btc"
+        },
+        "BR": {
+          "donation_source": "crypto_btc"
+        }
+      }
     },
     "tab_limiter": {
       "is_active": false,
