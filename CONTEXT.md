@@ -45,7 +45,7 @@ git remote set-url origin "https://nikol-dev-tools:ТОКЕН@github.com/nikol-d
 | **GitHub аккаунт** | `nikol-dev-tools` |
 | **GitHub PAT (запись)** | Хранится у пользователя в файле `SCHEPKI_TOKEN.doc` — попроси прислать в начале диалога |
 | **Google Analytics 4** | Measurement ID: `G-3ZKRBK0TBV` |
-| **GA4 API Secret** | ⚠️ ЗАГЛУШКА — аналитика не работает! В breathing-timer: `schepki_v1`, в tab-limiter: `schepki_secret_v1`. Нужно заменить на реальный — см. раздел 9 |
+| **GA4 API Secret** | ✅ Реальный: `TaFzQ3cgRP25jG3BSYtASA` (псевдоним: schepki_prod, создан 22.03.2026). Вписан во все analytics.js |
 | **Buy Me a Coffee** | [buymeacoffee.com/nikoltools](https://buymeacoffee.com/nikoltools) — Stripe подключён на Mykola Kolesnykov, Кипр |
 | **Chrome Developer Dashboard** | Зарегистрирован на основной email, взнос $5 оплачен |
 
@@ -56,7 +56,7 @@ git remote set-url origin "https://nikol-dev-tools:ТОКЕН@github.com/nikol-d
 | Компонент | Ссылка / Детали |
 |---|---|
 | **GitHub Config Repo** | [github.com/nikol-dev-tools/schepki-config](https://github.com/nikol-dev-tools/schepki-config) |
-| **GitHub Boilerplate Repo** | [github.com/nikol-dev-tools/schepki-boilerplate](https://github.com/nikol-dev-tools/schepki-boilerplate) |
+| **GitHub Boilerplate Repo** | [github.com/nikol-dev-tools/schepki-boilerplate](https://github.com/nikol-dev-tools/schepki-boilerplate) — **v2.0** (GA4, i18n, Rate Us, UTM, donate delay) |
 | **GitHub Tab Limiter Repo** | [github.com/nikol-dev-tools/tab-limiter](https://github.com/nikol-dev-tools/tab-limiter) |
 | **GitHub Breathing Timer Repo** | [github.com/nikol-dev-tools/breathing-timer](https://github.com/nikol-dev-tools/breathing-timer) (ветка: master) |
 | **Remote Config URL** | `https://raw.githubusercontent.com/nikol-dev-tools/schepki-config/main/config.json` |
@@ -141,7 +141,7 @@ git remote set-url origin "https://nikol-dev-tools:ТОКЕН@github.com/nikol-d
 4. Написать логику в секции `STEP 3: YOUR EXTENSION LOGIC HERE` в `popup.js`.
 5. **НЕ трогать** `remote-config.js` и `analytics.js` — они работают идеально.
 
-### Стандарт архитектуры v2.0 (Tab Limiter и все последующие):
+### Стандарт архитектуры v2.0 (Бойлерплейт обновлён, Tab Limiter и все последующие):
 - ✅ Событие «первый запуск» в GA4
 - ✅ UTM-параметры в ссылке на донат (`?utm_source=EXTENSION_ID&utm_medium=extension`)
 - ✅ Задержка донат-баннера (показывать с 3-го запуска)
@@ -207,6 +207,10 @@ git remote set-url origin "https://nikol-dev-tools:ТОКЕН@github.com/nikol-d
 ---
 
 ## 8. История изменений
+
+### 22 марта 2026 (ночь)
+- **GA4 API Secret** получен и вписан во все расширения: `TaFzQ3cgRP25jG3BSYtASA` (псевдоним: schepki_prod). Аналитика активна во всех расширениях.
+- **Boilerplate v2.0** создан и загружен на GitHub: [schepki-boilerplate](https://github.com/nikol-dev-tools/schepki-boilerplate). Фичи: GA4 с реальным секретом, i18n (EN/DE/FR/ES/PT), Rate Us, UTM, задержка баннера, Remote Config.
 
 ### 22 марта 2026 (вечер)
 - Добавлен `PUBLISHING_GUIDE.md` — постоянный гайд по публикации расширений в Chrome Web Store.
