@@ -1,6 +1,6 @@
 {
   "_comment": "Schepki Extensions — Remote Config. Edit this file to update all extensions instantly.",
-  "_last_updated": "2026-03-22T10:00Z",
+  "_last_updated": "2026-03-22T23:00Z",
   "global": {
     "privacy_policy_url": "https://nikol-dev-tools.github.io/schepki-config/privacy",
     "support_email": "nikol.dev.tools@gmail.com",
@@ -27,25 +27,6 @@
     "banner_icon": ""
   },
   "extensions": {
-    "pomodoro_timer": {
-      "is_active": true,
-      "version_name": "Pomodoro Timer",
-      "store_url": "https://chrome.google.com/webstore/detail/REPLACE_WITH_POMODORO_ID",
-      "donation": {
-        "show": true,
-        "source": "buymeacoffee",
-        "text_en": "Support the developer ☕",
-        "text_ru": "Поддержать разработчика ☕"
-      },
-      "geo_overrides": {
-        "IN": {
-          "donation_source": "crypto_btc"
-        },
-        "BR": {
-          "donation_source": "crypto_btc"
-        }
-      }
-    },
     "breathing_timer": {
       "is_active": true,
       "version_name": "Breathing Timer — Calm & Focus",
