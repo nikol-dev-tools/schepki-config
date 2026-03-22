@@ -18,7 +18,7 @@
 |---|---|---|---|
 | Breathing Timer | 🟢 Live | [Открыть](https://chromewebstore.google.com/detail/oplkicaedpgnccocfflaakmkefgeepbd) | `oplkicaedpgnccocfflaakmkefgeepbd` |
 | Tab Limiter | 🟡 In Review | — (ещё не опубликован) | `clpenohkhonpjaclhcedbldknallghmn` |
-| Pomodoro Timer | 🟡 In Review | — (ещё не опубликован) | ожидается |
+| Subscription Reminder | ⚪ Planned | — | — |
 
 ---
 
@@ -76,8 +76,11 @@
 |---|---|---|
 | `schepki-config` | База знаний, Remote Config, документация | [Открыть](https://github.com/nikol-dev-tools/schepki-config) |
 | `schepki-boilerplate` | Шаблон v2 для новых расширений | [Открыть](https://github.com/nikol-dev-tools/schepki-boilerplate) |
-| `breathing-timer` | Код Breathing Timer v1.0.0 | [Открыть](https://github.com/nikol-dev-tools/breathing-timer) |
+| `breathing-timer` | Код Breathing Timer (только исходники расширения) | [Открыть](https://github.com/nikol-dev-tools/breathing-timer) |
+| `breathing-timer-assets` | Промо-баннеры и скриншоты Breathing Timer для стора | [Открыть](https://github.com/nikol-dev-tools/breathing-timer-assets) |
 | `tab-limiter` | Код Tab Limiter v1.0.0 | [Открыть](https://github.com/nikol-dev-tools/tab-limiter) |
+
+> **Правило:** В репозитории с кодом расширения хранится только то, что идёт в ZIP-архив для стора. Все тяжёлые промо-материалы (скриншоты, баннеры, исходники иконок) — в отдельном репозитории `{extension-name}-assets`.
 
 ---
 
@@ -118,7 +121,7 @@
 |---|---|
 | Breathing Timer | `breathing exercise`, `box breathing`, `4-7-8 breathing`, `anxiety relief`, `calm breathing` |
 | Tab Limiter | `tab limiter`, `limit tabs`, `tab manager`, `focus tabs`, `reduce tabs` |
-| Pomodoro Timer | `pomodoro timer`, `focus timer`, `25 minute timer`, `productivity timer` |
+| Subscription Reminder | `subscription reminder`, `trial reminder`, `cancel subscription`, `saas reminder` |
 
 ---
 
@@ -154,8 +157,8 @@
 - [ ] GA4 → Events → `first_launch` — сколько новых пользователей за неделю
 - [ ] GA4 → Events → `donation_click` — конверсия в донаты
 - [ ] Buy Me a Coffee — новые поддержки
-- [ ] Статус расширений на модерации (Tab Limiter, Pomodoro)
+- [ ] Статус Tab Limiter на модерации
 
 ---
 
-*Последнее обновление: 22 марта 2026*
+*Последнее обновление: 22 марта 2026 (ночь)*
