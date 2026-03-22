@@ -74,7 +74,7 @@ git remote set-url origin "https://nikol-dev-tools:ТОКЕН@github.com/nikol-d
 |---|---|---|---|---|---|
 | 1 | **Pomodoro Timer** | Pomodoro Timer | 🟡 In Review | Ожидается после аппрува | GA4 ✅ Remote Config ✅ |
 | 2 | **Breathing Timer** | Breathing Timer — Calm & Focus | 🟢 Live | ID: `oplkicaedpgnccocfflaakmkefgeepbd` | GA4 ✅ Remote Config ✅ |
-| 3 | **Tab Limiter** | — | ⚪ Planned | — | Следующее на очереди |
+| 3 | **Tab Limiter** | Tab Limiter — Stay Focused | 🔵 Ready to Upload | ZIP готов | GA4 ✅ Remote Config ✅ UTM ✅ Rate Us ✅ i18n ✅ |
 | 4 | **Quick Notes** | — | ⚪ Planned | — | — |
 
 > **Coin Flip** — тестовая версия, нигде не публиковалась, в работе не используется. Упоминать не нужно.
@@ -140,9 +140,14 @@ git remote set-url origin "https://nikol-dev-tools:ТОКЕН@github.com/nikol-d
 
 ### 22 марта 2026
 - **Breathing Timer — Calm & Focus** одобрен Chrome Web Store 🎉 → статус 🟢 Live.
-- Store ID: `oplkicaedpgnccocfflaakmkefgeepbd`.
-- Обсуждены архитектурные улучшения для следующих расширений (первый запуск, UTM, Rate Us, версия).
+- Store ID: `oplkicaedpgnccocfflaakmkefgeepbd`. `config.json` обновлён с реальным store_url.
+- Обсуждены архитектурные улучшения для следующих расширений (первый запуск, UTM, Rate Us, версия, i18n).
 - Принята стратегия: сначала набрать 5+ расширений, потом полировать все разом.
+- **Tab Limiter — Stay Focused** полностью разработан, готов к загрузке в Chrome Web Store.
+  - Архитектура v2.0: GA4 (первый запуск, use count, tab blocked), Remote Config (UTM, GEO), Rate Us (после 10 использований), i18n (EN/DE/FR/ES/PT), toggle вкл/выкл, live badge на иконке.
+  - ZIP: `tab-limiter-v1.0.0.zip` (35KB, 13 файлов).
+  - Промо: `promo_1280x800.png`, `promo_440x280.png`, иконки 16/32/48/128px.
+  - После публикации: заменить `REPLACE_WITH_TAB_LIMITER_ID_AFTER_PUBLISH` в `config.json`.
 
 ### 21 марта 2026
 - Создан GitHub аккаунт `nikol-dev-tools`.
