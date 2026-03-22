@@ -154,6 +154,18 @@ git remote set-url origin "https://nikol-dev-tools:ТОКЕН@github.com/nikol-d
 
 ## 6. Текущие приоритеты
 
+### ⚠️ TODO — отложенные задачи (MUST DO при следующем обновлении)
+
+1. **Breathing Timer + Tab Limiter** — обновить ZIP одним пакетом:
+   - Добавить `extension_id` и `extension_version` в каждый вызов `trackEvent()` в `popup.js` (GA4 не видит данные без этого)
+   - Перенести все фичи Tab Limiter v2 в Breathing Timer (и Pomodoro): UTM, Rate Us, first_open, use count, i18n, задержка баннера
+   - Добавить новые иконки v3 в ZIP Breathing Timer
+   - **Делать одним пакетом** — не гонять на проверку несколько раз
+
+2. **Tab Limiter** — дождаться одобрения, затем сразу обновить ZIP (см. п. 1)
+
+3. **Pomodoro Timer** — дождаться одобрения, вписать store_url в config.json
+
 ### Приоритет 1 — Tab Limiter загружен, ждём одобрения ✅
 - Tab Limiter отправлен на модерацию 22 мар 2026.
 - Store ID: `clpenohkhonpjaclhcedbldknallghmn`.
@@ -207,6 +219,13 @@ git remote set-url origin "https://nikol-dev-tools:ТОКЕН@github.com/nikol-d
 ---
 
 ## 8. История изменений
+
+### 22 марта 2026 (день)
+- **Иконки v3** для Breathing Timer: тёмный фон `#0a0e1a`, неоновый лотос (cyan/teal) — единый стиль с баннерами. Загружены на GitHub.
+- **GA4 Custom Dimensions** настроены в GA4: `extension_id` и `extension_version` (скоп — Event). Теперь в отчётах можно фильтровать по каждому расширению отдельно.
+- **DASHBOARD.md** создан — единый навигационный док со всеми ссылками проекта.
+- **PUBLISHING_GUIDE.md** обновлён: стандарт иконок Schepki (цвета, стиль, промпт-шаблон), раздел про обновление ZIP vs Store listing.
+- **Breathing Timer** отправлен на повторную модерацию с новой иконкой (Store listing).
 
 ### 22 марта 2026 (ночь)
 - **GA4 API Secret** получен и вписан во все расширения: `TaFzQ3cgRP25jG3BSYtASA` (псевдоним: schepki_prod). Аналитика активна во всех расширениях.
